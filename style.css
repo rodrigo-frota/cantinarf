@@ -1,0 +1,232 @@
+/* Configurações Gerais */
+* { 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+    margin: 0; padding: 0; 
+}
+body { 
+    background-color: #ffffff; 
+    color: #333; padding-top: 80px; 
+} 
+/* Espaço para a barra fixa */
+
+/* Header Flutuante */
+header {
+    background-color: #5d8df4;
+    height: 70px;
+    display: flex;
+    justify-content: space-between; /* Mantém os itens distribuídos */
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-icon { 
+    color: #333; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+.logo-container {
+    background: #5d8df4;
+    height: 100%;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute; /* Fixa a posição no centro do header */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo-img { 
+    height: 80px; 
+}
+/* Nova classe para centralizar a logo quando não houver botão */
+.header-centered {
+    justify-content: center !important;
+}
+
+/* Garante que o ícone do menu não quebre o alinhamento central */
+header .menu-icon {
+    position: absolute;
+    left: 30px;
+}
+.btn-login-top {
+    background: white;
+    border: 1px solid #0000000;
+    padding: 5px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: auto; 
+    display: none; /* Mantém oculto por padrão em todas as telas */
+}
+
+.btn-login-top.btn-visible {
+    display: block; 
+}
+
+/* Breadcrumbs */
+.breadcrumbs { 
+    padding: 20px 60px; 
+    font-size: 16px; 
+    color: #5d8df4; }
+
+/* Containers */
+.main-container {
+    border: 1px solid #333;
+    border-radius: 40px;
+    margin: 0 50px 30px 50px;
+    padding: 40px;
+}
+
+h2 { 
+    color: #5d8df4; 
+    font-size: 28px; 
+    margin-bottom: 30px; 
+    font-weight: normal; }
+
+/* Formulários */
+.grid-form { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+}
+.input-group { 
+    display: flex; 
+    flex-direction: column; 
+}
+.input-group label { 
+    font-size: 16px; 
+    margin-bottom: 8px; 
+}
+input, select { 
+    padding: 12px; 
+    border: 1px solid #333; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    background: #fff; }
+
+/* Botões */
+.actions-row { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 20px; 
+    margin-top: 30px; 
+}
+.btn { 
+    padding: 10px 40px; 
+    border-radius: 10px;
+    cursor: pointer; 
+    border: 1px solid #333; 
+    font-size: 16px; 
+    text-decoration: none; 
+    display: inline-block; 
+    text-align: center; 
+}
+.btn-blue { 
+    background: #5d8df4; 
+    color: white; 
+    border: none; 
+}
+.btn-gray { 
+    background: #e0e0e0; 
+    color: #333;
+ }
+
+/* Tabelas */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+th { 
+    background: #e0e0e0; 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+    font-weight: normal; 
+}
+td { 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+    text-align: center; 
+    height: 50px; 
+}
+
+/* Home Layout */
+.home-split { 
+    display: flex; 
+    justify-content: center; 
+    align-items: stretch; 
+    gap: 40px; 
+    margin-top: 50px; 
+}
+.vertical-line { 
+    width: 4px; 
+    background: #000; 
+}
+.section-box { 
+    flex: 1; 
+    text-align: center; 
+}
+.card-area { 
+    border: 1px solid #333; 
+    border-radius: 40px; 
+    height: 400px; 
+    margin-top: 20px; 
+    cursor: pointer; 
+}
+/* Estilo do Menu Lateral */
+.side-nav {
+    height: 100%;
+    width: 0; /* Começa fechado */
+    position: fixed;
+    z-index: 2000; /* Acima do header */
+    top: 0;
+    left: 0;
+    background-color: #5d8df4;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.side-nav a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.side-nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+}
+
+/* Overlay de fundo */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1500;
+}

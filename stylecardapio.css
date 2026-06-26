@@ -1,0 +1,10 @@
+ /* Ajuste específico para células editáveis */
+        td[contenteditable="true"] {
+            background-color: #fff;
+            outline: none;
+            cursor: text;
+        }
+        td[contenteditable="true"]:focus {
+            background-color: #f0f7ff;
+            border: 2px solid #5d8df4;
+        }

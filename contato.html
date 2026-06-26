@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fale Conosco - Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylecontato.css">
+   <script src="script.js"></script>
+</head>
+<body>
+
+<div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+   <a href="compra.html" class="logado-only">Comprar</a>
+    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+    <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+<div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo-container" onclick="location.href='home.html'">
+        <img src="imagens/LOGO.png" class="logo-img">
+    </div>
+    <button class="btn-login-top" onclick="location.href='login.html'">LOGIN</button>
+</header>
+
+<div class="main-container">
+    <h2 style="text-align: center; margin: 40px 0; font-weight: normal; letter-spacing: 2px;">FALE CONOSCO</h2>
+
+    <div class="contact-layout">
+        <div class="left-col">
+            <div class="info-card">
+                <h3>Canais de Atendimento</h3>
+                <p><strong>📍 Endereço:</strong> R. 7 de Setembro, 201 - Centro, Pelotas - RS, 96015-300</p>
+                <p><strong>📞 Telefone:</strong> (053)31998953</p>
+                <p><strong>✉️ E-mail:</strong> atendimento@cardapiopelotas.com.br</p>
+                <p><strong>⏰ Horário:</strong> Seg a Sex, das 08h às 18h</p>
+            </div>
+
+            <div class="map-box">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3392.235940316377!2d-52.3415175!3d-31.7640236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511b59005992983%3A0x6e9a6e0c65369c7f!2sR.%20Sete%20de%20Setembro%2C%20201%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-300!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div id="form-container">
+                <div class="form-area">
+                    <h3 style="margin-bottom: 20px; color: #5d8df4;">Envie sua Mensagem</h3>
+                    
+                    <div class="form-group">
+                        <label>Assunto</label>
+                        <input type="text" placeholder="Ex: Dúvida sobre créditos">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sua Mensagem</label>
+                        <textarea rows="6" placeholder="Como podemos ajudar você hoje?"></textarea>
+                    </div>
+
+                    <button class="btn-send">ENVIAR AGORA</button>
+                </div>
+            </div>
+            
+            <p id="nota-login" style="font-size: 11px; color: #999; margin-top: 15px; text-align: center;">
+                * Esta área de mensagem só é exibida para usuários logados no sistema.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

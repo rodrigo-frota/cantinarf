@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body style="text-align: center;">
+<div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+    <a href="compra.html" class="logado-only">Comprar</a>
+   <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+    <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+    
+    <header class="header-centered">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="logo-container" onclick="location.href='home.html'">
+            <img src="imagens/LOGO.png" class="logo-img">
+        </div>
+    </header>
+
+<div style="margin-top: 50px; display: inline-block; width: 450px;">
+    <h2 style="color: black; margin-bottom: 10px;">USUÁRIO</h2>
+    <input type="text" id="usuario" placeholder="USUÁRIO" style="width: 100%; margin-bottom: 40px; text-align: center;">
+    
+    <h2 style="color: black; margin-bottom: 10px;">SENHA</h2>
+    <div style="position: relative; width: 100%; margin-bottom: 30px;">
+        <input type="password" id="senha_login" placeholder="SENHA" style="-webkit-text-security: asterisk;width: 100%; text-align: center; padding-right: 40px;">
+        <span onclick="togglePassword('senha_login')" style="position: absolute; right: 15px; top: 12px; cursor: pointer; font-size: 18px;">👁️</span>
+    </div>
+
+    <h2 style="color: black; margin-bottom: 10px;">TIPO DE ACESSO</h2>
+    <select id="tipo_usuario" style="width: 100%; margin-bottom: 50px; text-align: center;">
+        <option value="cliente">SOU CLIENTE</option>
+        <option value="funcionario">SOU FUNCIONÁRIO</option>
+    </select>
+    
+    <br>
+    <button class="btn btn-gray" style="width: 200px;" onclick="realizarLogin()">ENTRAR</button>
+
+    <script>
+
+       
+        function realizarLogin() {
+    const tipo = document.getElementById('tipo_usuario').value;
+    localStorage.setItem('perfilUsuario', tipo);
+    location.href = 'home.html';
+}
+
+// Opcional: Limpar o perfil ao carregar a tela de login
+window.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem('perfilUsuario');
+});
+   
+</script>
+</body>
+</html>

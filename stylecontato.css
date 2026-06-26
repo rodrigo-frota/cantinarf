@@ -1,0 +1,81 @@
+  /* Estilos específicos desta página mantidos e ajustados */
+       .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #5d8df4;
+        }
+
+        .info-card h3 { 
+            margin-bottom: 15px; 
+            color: #333; 
+            border-bottom: 2px solid #5d8df4; 
+            padding-bottom: 5px; 
+        }
+
+        /* Ajuste do container do mapa para aceitar o iframe */
+        .map-box {
+            border: 2px solid #5d8df4;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .form-area {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+            font-size: 14px; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .btn-send {
+            background: #5d8df4;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-warning {
+            background: #fff3f3;
+            color: #d9534f;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px dashed #d9534f;
+        }

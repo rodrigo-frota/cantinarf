@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Compra de Créditos - Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="scriptcardapio.js"></script>
+</head>
+<body>
+ <div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+    <a href="compra.html" class="logado-only">Comprar</a>
+    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+    <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header class="header-centered">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="logo-container" onclick="location.href='home.html'">
+            <img src="imagens/LOGO.png" class="logo-img">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">Home ➔ Compra</div>
+
+    <div class="main-container">
+        <h2 style="text-align: center;">DIAS DA SEMANA QUE DESEJA COMER:</h2>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
+            <label><input type="checkbox"> Segunda</label>
+            <label><input type="checkbox"> Terça</label>
+            <label><input type="checkbox"> Quarta</label>
+            <label><input type="checkbox"> Quinta</label>
+            <label><input type="checkbox"> Sexta</label>
+            <label><input type="checkbox"> Sábado</label>
+            <label><input type="checkbox"> Domingo</label>
+        </div>
+
+        <h2 style="text-align: center;">TURNOS QUE DESEJA COMER:</h2>
+        <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 40px;">
+            <label><input type="checkbox"> MANHÃ</label>
+            <label><input type="checkbox"> TARDE</label>
+            <label><input type="checkbox"> NOITE</label>
+        </div>
+
+        <h2 style="text-align: center;">CARDÁPIO</h2>
+        <div style="margin-bottom: 40px;">
+            <table>
+                <tr><th></th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th><th>Sábado</th></tr>
+                <tr><td>Manhã</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Tarde</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Noite</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+            <label><strong>FORMA DE PAGAMENTO:</strong></label>
+            <select style="width: 200px;">
+                <option>Cartão de Crédito</option>
+                <option>PIX</option>
+                <option>Boleto</option>
+            </select>
+        </div>
+
+        <div class="actions-row">
+            <button class="btn btn-gray" onclick="location.href='home.html'">Cancelar</button>
+            <button class="btn btn-blue" onclick="alert('Compra realizada com sucesso!')">Confirmar</button>
+        </div>
+    </div>
+
+   
+</body>
+</html>

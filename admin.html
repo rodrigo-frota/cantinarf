@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Administrativo - Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleadm.css">
+    <script src="script.js"></script>
+   
+</head>
+<body>
+   <div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+   <a href="compra.html" class="logado-only">Comprar</a>
+    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+        <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header class="header-centered">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="logo-container" onclick="location.href='home.html'">
+            <img src="imagens/LOGO.png" class="logo-img">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">Home ➔ Painel Administrativo</div>
+
+    <div class="main-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h2>Controle de Tickets</h2>
+            <button class="btn btn-blue" onclick="location.href='compra.html'">+ Venda Avulsa</button>
+        </div>
+
+        <div class="filter-row">
+            <div class="input-group" style="width: 300px;">
+                <label>Consultar Data:</label>
+                <input type="date" id="data-consulta" value="2026-05-07">
+            </div>
+            <button class="btn btn-gray" onclick="atualizarDados()">Filtrar</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Manhã</h3>
+                <p id="total-manha">42</p>
+            </div>
+            <div class="stat-card">
+                <h3>Tarde</h3>
+                <p id="total-tarde">28</p>
+            </div>
+            <div class="stat-card">
+                <h3>Noite</h3>
+                <p id="total-noite">15</p>
+            </div>
+        </div>
+
+        <h3>Relatório de Vendas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Turno</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>João Silva</td><td>Manhã</td><td>Mensal</td><td>Confirmado</td></tr>
+                <tr><td>Maria Souza</td><td>Tarde</td><td>Avulso</td><td>Confirmado</td></tr>
+                <tr><td>Pedro Alvares</td><td>Manhã</td><td>Avulso</td><td>Confirmado</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+  
+</body>
+</html>

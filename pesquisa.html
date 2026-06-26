@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+    <a href="compra.html" class="logado-only">Comprar</a>
+    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+    <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+<div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+   <header class="header-centered">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo-container" onclick="location.href='home.html'">
+        <img src="imagens/LOGO.png" class="logo-img">
+    </div>
+    </header>
+    <div class="breadcrumbs">Home ➔ Pesquisa de usuario</div>
+
+    <div class="main-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Pesquisa de usuario</h2>
+            <button class="btn btn-blue" onclick="location.href='cadastro_usuario.html'">Cadastrar</button>
+        </div>
+        
+        <div class="grid-form">
+            <div class="input-group"><label>Nome</label><input type="text" placeholder="Nome do usuário"></div>
+            <div class="input-group"><label>CPF</label><input type="text" placeholder="000.000.000-00"></div>
+            <div class="input-group"><label>Função</label><select><option>Admin</option><option>Cliente</option></select></div>
+        </div>
+        
+        <div class="actions-row">
+            <button class="btn btn-blue">Pesquisar</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <table>
+            <thead>
+                <tr><th>Nome</th><th>CPF</th><th>Função</th><th>Ações</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>João Silva</td><td>123.456.789-00</td><td>Cliente</td><td><span style="color: purple; cursor: pointer;">✎</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+  <script>
+    // Bloqueio de segurança: se não for funcionário, expulsa da página
+if (localStorage.getItem('perfilUsuario') !== 'funcionario') {
+    alert("Acesso negado! Área restrita a funcionários.");
+    location.href = 'home.html';
+}
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylecardapio.css">
+     <script src="script.js"></script>
+     <script src="scriptcardapio.js"></script>
+    
+</head>
+<body>
+ <div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="home.html">Home</a>
+    <a href="compra.html" class="logado-only">Comprar</a>
+    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
+    <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
+    <a href="cadastro_usuario.html" class="admin-only">Cadastrar Usuário</a>
+    <a href="admin.html" class="admin-only">ADM</a>
+    <a href="cadastro_cardapio.html" class="admin-only">Cadastrar Cardápio</a>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.2); margin: 10px 0;">
+    <a href="contato.html">Fale Conosco</a>
+    <a href="login.html">Sair</a> 
+</div>
+
+    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <header class="header-centered">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="logo-container" onclick="location.href='home.html'">
+            <img src="imagens/LOGO.png" class="logo-img">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">Home ➔ Cadastro de cardapio</div>
+
+    <div class="main-container">
+        <h2>Cadastro de cardapio</h2>
+        
+        <div style="display: flex; align-items: flex-end; gap: 20px; margin-bottom: 30px;">
+            <div class="input-group" style="width: 200px;">
+                <label>Semana</label>
+                <input type="date" id="data-semana" value="2026-06-05">
+            </div>
+            <button class="btn btn-blue" onclick="salvarCardapio()">Confirmar</button>
+        </div>
+
+        <div class="main-container" style="margin: 20px 0; padding: 20px; border-radius: 20px;">
+            <table id="tabela-cadastro">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                        <th>Sábado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Manhã</th>
+                        <td contenteditable="true" data-row="0" data-col="1"></td>
+                        <td contenteditable="true" data-row="0" data-col="2"></td>
+                        <td contenteditable="true" data-row="0" data-col="3"></td>
+                        <td contenteditable="true" data-row="0" data-col="4"></td>
+                        <td contenteditable="true" data-row="0" data-col="5"></td>
+                        <td contenteditable="true" data-row="0" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <th>Tarde</th>
+                        <td contenteditable="true" data-row="1" data-col="1"></td>
+                        <td contenteditable="true" data-row="1" data-col="2"></td>
+                        <td contenteditable="true" data-row="1" data-col="3"></td>
+                        <td contenteditable="true" data-row="1" data-col="4"></td>
+                        <td contenteditable="true" data-row="1" data-col="5"></td>
+                        <td contenteditable="true" data-row="1" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <th>Noite</th>
+                        <td contenteditable="true" data-row="2" data-col="1"></td>
+                        <td contenteditable="true" data-row="2" data-col="2"></td>
+                        <td contenteditable="true" data-row="2" data-col="3"></td>
+                        <td contenteditable="true" data-row="2" data-col="4"></td>
+                        <td contenteditable="true" data-row="2" data-col="5"></td>
+                        <td contenteditable="true" data-row="2" data-col="6"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="actions-row">
+            <button class="btn btn-gray" onclick="location.href='home.html'">Cancelar</button>
+            <button class="btn btn-blue" onclick="salvarCardapio()">Confirmar</button>
+        </div>
+    </div>
+
+     <script>
+    // Bloqueio de segurança: se não for funcionário, expulsa da página
+if (localStorage.getItem('perfilUsuario') !== 'funcionario') {
+    alert("Acesso negado! Área restrita a funcionários.");
+    location.href = 'home.html';
+}
+   
+</script>
+</body>
+</html>
