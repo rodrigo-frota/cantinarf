@@ -9,7 +9,7 @@
 <body style="text-align: center;">
 <div id="side-menu" class="side-nav">
     <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-    <a href="home.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="compra.html" class="logado-only">Comprar</a>
    <a href="cliente.html" class="cliente-only">Meus Tickets</a>
     <a href="pesquisa.html" class="admin-only">Pesquisa de Usuário</a>
@@ -25,7 +25,7 @@
     
     <header class="header-centered">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="logo-container" onclick="location.href='home.html'">
+        <div class="logo-container" onclick="location.href='index.html'">
             <img src="imagens/LOGO.png" class="logo-img">
         </div>
     </header>
@@ -55,7 +55,7 @@
         function realizarLogin() {
     const tipo = document.getElementById('tipo_usuario').value;
     localStorage.setItem('perfilUsuario', tipo);
-    location.href = 'home.html';
+    location.href = 'index.html';
 }
 
 // Opcional: Limpar o perfil ao carregar a tela de login
